@@ -4,6 +4,9 @@ class Artist
   attr_accessor :name
   attr_reader :songs
 
+  extend Memorable
+  include
+
   @@artists = []
 
   def self.find_by_name(name)
@@ -17,10 +20,6 @@ class Artist
 
   def self.all
     @@artists
-  end
-
-  def self.reset_all
-    self.all.clear
   end
 
   def self.count
